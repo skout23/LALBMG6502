@@ -1,6 +1,6 @@
-processor 6502
-seg code
-org $F0000      ; defines code origin at $F0000
+    processor 6502
+    seg code
+    org $F0000      ; defines code origin at $F0000
 
 Start:
     sei         ; disables interrupts
