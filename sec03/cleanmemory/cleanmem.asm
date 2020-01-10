@@ -14,10 +14,11 @@ Start:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     lda #0      ; A = 0
     ldx #$FF    ; X = #$FF
+    sta $FF     ; zero out $FF before the loop starts
 
 MemLoop:
-    sta $0,X    ; store ZERO (from "A" register) at address $0 + X
     dex         ; X--
+    sta $0,X    ; store ZERO (from "A" register) at address $0 + X
     bne MemLoop ; loop until X==0
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
